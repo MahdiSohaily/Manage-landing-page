@@ -1,0 +1,476 @@
+/* Utility Classes */
+:root {
+
+  /* document color pattern */
+  --light-gray: hsl(0, 0%, 98%);
+  --pale-red-300: hsl(12, 22%, 95%);
+  --pale-red: hsl(13, 100%, 96%);
+  --dark-blue: hsl(233, 12%, 13%);
+  --dark-blue-paragraph: hsl(240, 3%, 53%);
+  --primary-dark-blue: hsl(228, 39%, 23%);
+  --primary-bright-red: hsl(12, 88%, 59%);
+  --primary-bright-red-300: hsl(12, 91%, 73%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Document font family */
+  --ff-primary: 'Be Vietnam Pro', sans-serif;
+  --ff-heading: var(--ff-primary);
+  --ff-body: var(--ff-primary);
+
+  /* font weight */
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
+  /* font sizes */
+  --fs-300: 0.8125rem;
+  --fs-400: 0.875rem;
+  --fs-500: 0.9375rem;
+  --fs-600: 1rem;
+  --fs-700: 2rem;
+  --fs-800: 2.5rem;
+  --fs-900: 3rem;
+
+  --fs-primary-heading: var(--fs-800);
+  --fs-secondary-heading: var(--fs-700);
+
+  --fs-body: var(--fs-400);
+  --fs-nav: var(--fs-500);
+  --fs-button: var(--fs-300);
+
+  /* size for padding, margin etc... */
+  --size-100: 0.25rem;
+  --size-200: 0.50rem;
+  --size-300: 0.75rem;
+  --size-400: 1rem;
+  --size-450: 1.2rem;
+  --size-500: 1.5rem;
+  --size-600: 2rem;
+  --size-700: 3rem;
+  --size-800: 4rem;
+  --size-900: 5rem;
+  --size-lg: 7rem;
+}
+
+/* changing fonts on different screen sizes */
+@media screen and (min-width : 50em) {
+  :root {
+    --fs-primary-heading: var(--fs-900);
+    --fs-secondary-heading: var(--fs-800);
+
+    --fs-body: var(--fs-500);
+    --fs-nav: var(--fs-300);
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul,
+ ol elements with a list role, which suggests
+  default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and 
+smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility  classes */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:where(.flow :not(:first-child)) {
+  margin-top: var(--flow-spacer, 3em);
+}
+
+.text-dark-blue {
+  color: var(--dark-blue);
+}
+
+.text-primary-blue {
+  color: var(--primary-dark-blue);
+}
+
+.text-bright-red {
+  color: var(--primary-bright-red);
+}
+
+.text-pale-red {
+  color: var(--pale-red);
+}
+
+.bg-dark-blue {
+  background-color: var(--dark-blue);
+}
+
+.bg-primary-blue {
+  background-color: var(--primary-dark-blue);
+}
+
+.bg-bright-red {
+  background-color: var(--primary-bright-red);
+}
+
+.bg-pale-red {
+  background-color: var(--pale-red);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fs-primary-heading {
+  font-size: var(--fs-primary-heading);
+  line-height: 1.1;
+}
+
+.fs-secondary-heading {
+  font-size: var(--fs-secondary-heading);
+  line-height: 1.1;
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.padding-block-900 {
+  padding-block: var(--size-900);
+}
+
+.padding-block-700 {
+  padding-block: var(--size-700);
+}
+
+.padding-block-400 {
+  padding-block: var(--size-400);
+}
+
+.container {
+  --max-width: 1110px;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - var(--padding)*2);
+  margin-inline: auto;
+}
+
+.even-column {
+  display: grid;
+  gap: 1rem;
+}
+
+.intro {
+  line-height: 1.8;
+  max-width: 32ch;
+  margin-bottom: 2rem;
+  color: var(--dark-blue-paragraph);
+}
+
+@media screen and (min-width:27em) {
+  .even-column {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+p:not([class]) {
+  line-height: 1.8;
+  max-width: 32ch;
+  color: var(--dark-blue-paragraph);
+}
+
+p[data-width='wide'] {
+  max-width: 42ch;
+}
+
+@media screen and (max-width:27em) {
+
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .first {
+    justify-content: center;
+  }
+
+  .intro,
+  .first .button {
+    display: block;
+    margin-top: 1rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .bg-shape {
+    text-align: center;
+  }
+  .fs-secondary-heading {
+    max-width: 16ch;
+    margin-inline: auto;
+  }
+}
+
+.vertical-item-center {
+  align-items: center;
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
+/* General Styles */
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  color: var(--dark-blue);
+}
+
+/* 1. Header part styles */
+.primary-header {
+  margin-top: var(--size-700);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  gap: clamp(var(--size-400), 5vw, var(--size-700));
+  ;
+}
+
+.nav-list li a {
+  display: inline;
+  text-decoration: none;
+  font-size: var(--fs-nav);
+  color: var(--dark-blue);
+  font-weight: var(--fw-semi-bold);
+}
+
+.nav-list li a:hover {
+  opacity: 0.5;
+}
+
+@media screen and (max-width:50em) {
+  .primary-navigation {
+    display: none;
+    position: fixed;
+    inset: var(--size-lg) var(--size-400) auto;
+    border-radius: var(--size-100);
+    background-color: var(--white);
+    padding: var(--size-700);
+    box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.05);
+    box-sizing: border-box;
+  }
+
+  .primary-header[data-visible]::after {
+    position: fixed;
+    content: ' ';
+    inset: 0;
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+    z-index: -1;
+  }
+
+  .nav-wrapper .button {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    /* padding: 0.5em; */
+  }
+
+  .icon-close {
+    display: none;
+  }
+
+  .nav-list {
+    display: grid;
+    gap: var(--size-400);
+    text-decoration: none;
+    text-align: center;
+    font-weight: var(--fw-bold);
+  }
+
+  .primary-navigation[data-visible] {
+    display: block;
+    position: fixed;
+
+  }
+}
+
+/* 2. services section styles */
+
+/* 3. call to action styles */
+.bg-shape {
+  position: relative;
+  isolation: isolate;
+  background-image: url("./images/bg-simplify-section-mobile.svg");
+  background-position: left center;
+  background-size: 5em;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width:27em) {
+  .bg-shape {
+    position: relative;
+    isolation: isolate;
+    background-image: url("./images/bg-simplify-section-desktop.svg");
+    background-size: cover;
+    background-position: 20rem bottom;
+    background-repeat: no-repeat;
+  }
+
+  .justify-self-end {
+    justify-self: end;
+  }
+}
+
+/* 4. FOOTER STYLES */
+/* 4.1 social media icons list */
+.social-media-icon {
+  display: flex;
+  gap: var(--size-300);
+}
+
+.social-media-icon li:hover a img {
+  background-color: red;
+}
+
+/* 4.2 footer navigation */
+.footer-nav ul li a {
+  text-decoration: none;
+  color: var(--pale-red);
+}
+
+.footer-nav ul li a:hover {
+  color: var(--primary-bright-red);
+}
+
+/* 4.3 footer form section */
+
+input[type='email'] {
+  border-radius: 100vmax;
+  width: 17em;
+  border: none;
+  padding-block: var(--size-300);
+  padding-left: 1em;
+  font-size: var(--fs-300);
+}
+
+/* buttons */
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  border-radius: 100vmax;
+  padding: var(--size-450) var(--size-600);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  color: var(--pale-red);
+  background-color: var(--primary-bright-red);
+  box-shadow: 0 1em 1em -1em var(--primary-bright-red);
+}
+
+.button[data-type='inverted'] {
+  color: var(--primary-bright-red);
+  background-color: var(--pale-red);
+}
+
+.button[data-type='inverted']:hover,
+.button[data-type='inverted']:focus-visible {
+  color: var(--primary-bright-red-300);
+  background-color: var(--pale-red);
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: var(--primary-bright-red-300);
+}
