@@ -5,9 +5,9 @@
   --light-gray: hsl(0, 0%, 98%);
   --pale-red-300: hsl(12, 22%, 95%);
   --pale-red: hsl(13, 100%, 96%);
-  --dark-blue: hsl(233, 12%, 13%);
-  --dark-blue-paragraph: hsl(240, 3%, 53%);
-  --primary-dark-blue: hsl(228, 39%, 23%);
+  --dark-blue: hsl(233, 15%, 21%);
+  --dark-blue-paragraph: hsl(240, 6%, 58%);
+  --primary-dark-blue: hsl(236, 32%, 28%);
   --primary-bright-red: hsl(12, 88%, 59%);
   --primary-bright-red-300: hsl(12, 91%, 73%);
   --white: hsl(0, 0%, 100%);
@@ -221,6 +221,11 @@ smooth scroll for people that prefer not to see them */
   padding-block: var(--size-400);
 }
 
+h1,
+h2 {
+  color: var(--primary-dark-blue);
+}
+
 .container {
   --max-width: 1110px;
   --padding: 1rem;
@@ -280,6 +285,7 @@ p[data-width='wide'] {
   .bg-shape {
     text-align: center;
   }
+
   .fs-secondary-heading {
     max-width: 16ch;
     margin-inline: auto;
@@ -412,6 +418,74 @@ body {
   }
 }
 
+/* carousel styles*/
+.carousel {
+  display: flex !;
+  padding: var(--size-300);
+  margin-bottom: var(--size-800);
+}
+
+carousel::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.slick-track,
+.slick-list {
+  overflow-y: visible;
+  padding-top: 1.5rem;
+}
+
+.card {
+  position: relative;
+  overflow: visible !important;
+  background-color: var(--light-gray) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column;
+  margin: 0.5rem;
+  border-radius: var(--size-100);
+}
+
+.card img {
+  position: absolute;
+  top: -3rem;
+  left: calc(50% - 3rem);
+  max-width: 6rem;
+}
+
+.description {
+  padding-top: var(--size-800);
+  padding-inline: var(--fs-400);
+  padding-bottom: var(--size-500);
+}
+
+.description p {
+  min-width: 42ch;
+  text-align: center;
+}
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+button[role='tab'] {
+  margin: var(--size-100);
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 100%;
+  border: 2px solid var(--primary-bright-red);
+  background: transparent;
+  font-size: 2px;
+  color: transparent;
+}
+button[aria-selected='true'] {
+  background-color: var(--primary-bright-red);
+}
 /* 4. FOOTER STYLES */
 /* 4.1 social media icons list */
 .social-media-icon {
@@ -442,6 +516,12 @@ input[type='email'] {
   padding-block: var(--size-300);
   padding-left: 1em;
   font-size: var(--fs-300);
+}
+
+.columns {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
 }
 
 /* buttons */
