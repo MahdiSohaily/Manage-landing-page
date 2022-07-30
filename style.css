@@ -320,12 +320,12 @@ body {
 
 .mobile-nav-toggle {
   display: none;
+  z-index: 1000;
 }
 
 .nav-list {
   display: flex;
   gap: clamp(var(--size-400), 5vw, var(--size-700));
-  ;
 }
 
 .nav-list li a {
