@@ -350,6 +350,7 @@ body {
     padding: var(--size-700);
     box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.05);
     box-sizing: border-box;
+    z-index: 100;
   }
 
   .primary-header[data-visible]::after {
@@ -357,7 +358,7 @@ body {
     content: ' ';
     inset: 0;
     background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
-    z-index: -1;
+    z-index: 1;
   }
 
   .nav-wrapper .button {
