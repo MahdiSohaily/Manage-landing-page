@@ -471,9 +471,8 @@ body {
 }
 
 /* 1. graph-section styles */
-/* .graph-section {
+.graph-section {
   position: relative;
-  overflow-x: hidden;
 }
 
 .graph-section::after{
@@ -481,14 +480,20 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rebeccapurple url('./images/bg-tablet-pattern.svg');
+  background: url('./images/bg-tablet-pattern.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   top: -30%;
   right: -35%;
   z-index: -1;
-} */
+}
+@media screen and (max-width:30em) {
+  .graph-section::after{
+    top: -50%;
+  right: -35%;
+  }
+}
 
 /* 2. numbered list section styles */
 .numbered-list-section {
@@ -500,20 +505,18 @@ body {
   content: '';
   display: inline-block;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   background: url('./images/bg-tablet-pattern.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  /* top: 60%;
-  left: -50%; */
-  top: -52%;
-  left: 60%;
+  top: 80%;
+  left: -45%;
   z-index: -1;
 }
 
-@media screen and (max-width:50em) {
+@media screen and (max-width:30em) {
 
   .numbered-list-section::after {
     width: 80%;
