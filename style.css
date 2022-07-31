@@ -296,11 +296,6 @@ p[data-width='wide'] {
     text-align: center;
   }
 
-  h3 {
-    background-color: var(--pale-red);
-    padding: var(--size-200);
-  }
-
   .first {
     justify-content: center;
   }
@@ -531,10 +526,6 @@ body {
   counter-reset: section;
 }
 
-::marker {
-  color: var(--pale-red);
-}
-
 .numbered-list li {
   display: flex;
   align-items: baseline;
@@ -553,9 +544,25 @@ body {
   color: var(--pale-red);
   background-color: var(--primary-bright-red);
 }
+@media screen and (max-width:50em) {
+  .numbered-list li::before {
+    width: 6rem;
+  }
+
+  /* .aligned-list{
+    background-color: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  } */
+}
 
 /* 3. carousel section styles */
 /* carousel styles*/
+.carousel-section {
+  text-align: center;
+  padding-bottom: var(--size-600);
+}
 .carousel {
   display: flex !;
   /* padding: var(--size-300); */
