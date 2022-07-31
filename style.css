@@ -95,7 +95,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  overflow-x: hidden;
+  /* overflow: hidden; */
 }
 
 /* A elements that don't have a class get default styles */
@@ -270,6 +270,7 @@ h2 {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
   }
+
   .intro {
     line-height: 1.8;
     max-width: 32ch;
@@ -315,11 +316,13 @@ p[data-width='wide'] {
   .bg-call-to-action {
     text-align: center;
   }
+
   .intro {
     max-width: 32ch;
     color: var(--dark-blue-paragraph);
   }
-  .pb-200{
+
+  .pb-200 {
     padding-bottom: 2rem;
   }
 }
@@ -337,6 +340,14 @@ p[data-width='wide'] {
 
 
 /* General Styles */
+
+body,html{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 body {
   font-family: var(--ff-body);
   font-size: var(--fs-body);
@@ -458,6 +469,7 @@ body {
 
   }
 }
+
 /* 1. graph-section styles */
 /* .graph-section {
   position: relative;
@@ -481,10 +493,12 @@ body {
 /* 2. numbered list section styles */
 .numbered-list-section {
   position: relative;
+  margin: 0;
 }
 
-.numbered-list-section::after{
+.numbered-list-section::after {
   content: '';
+  display: inline-block;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -492,14 +506,16 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  top: 60%;
-  left: -50%;
+  /* top: 60%;
+  left: -50%; */
+  top: -52%;
+  left: 60%;
   z-index: -1;
 }
 
 @media screen and (max-width:50em) {
- 
-  .numbered-list-section::after{
+
+  .numbered-list-section::after {
     width: 80%;
     height: 80%;
     top: -52%;
@@ -512,7 +528,7 @@ body {
   counter-reset: section;
 }
 
-::marker{
+::marker {
   color: var(--pale-red);
 }
 
@@ -521,7 +537,7 @@ body {
   align-items: baseline;
 }
 
-.numbered-list li::before{
+.numbered-list li::before {
   counter-increment: section;
   content: "0" counter(section);
   width: 4rem;
@@ -625,6 +641,7 @@ button[aria-selected='true'] {
     background-position: 20rem bottom;
     background-repeat: no-repeat;
   }
+
   .justify-self-end {
     display: flex;
     justify-content: flex-end;
@@ -640,7 +657,7 @@ button[aria-selected='true'] {
 }
 
 .social-media-icon li:hover a img {
-  background-color: red; 
+  background-color: red;
 }
 
 /* 5.2 footer navigation */
