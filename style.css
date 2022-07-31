@@ -5,7 +5,8 @@
   --light-gray: hsl(0, 0%, 98%);
   --pale-red-300: hsl(12, 22%, 95%);
   --pale-red: hsl(13, 100%, 96%);
-  --dark-blue: hsl(233, 15%, 21%);
+  --dark-blue-100: hsl(236, 13%, 24%);
+  --dark-blue-200: hsl(235, 13%, 16%);
   --dark-blue-paragraph: hsl(240, 6%, 58%);
   --primary-dark-blue: hsl(236, 32%, 28%);
   --primary-bright-red: hsl(12, 88%, 59%);
@@ -145,7 +146,7 @@ smooth scroll for people that prefer not to see them */
 }
 
 .text-dark-blue {
-  color: var(--dark-blue);
+  color: var(--dark-blue-200);
 }
 
 .text-primary-blue {
@@ -161,7 +162,7 @@ smooth scroll for people that prefer not to see them */
 }
 
 .bg-dark-blue {
-  background-color: var(--dark-blue);
+  background-color: var(--dark-blue-200);
 }
 
 .bg-primary-blue {
@@ -222,6 +223,10 @@ smooth scroll for people that prefer not to see them */
   padding-block: var(--size-400);
 }
 
+p{
+  color: var(--dark-blue-paragraph);
+}
+
 h1,
 h2 {
   color: var(--primary-dark-blue);
@@ -235,13 +240,14 @@ h2 {
   margin-inline: auto;
 }
 
-.even-column {
+/* .even-column {
   display: grid;
   gap: 1rem;
-}
+} */
 
 .even-column {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -260,6 +266,10 @@ h2 {
   }
 
   .column-sm {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
     flex: 33%;
   }
 }
@@ -275,14 +285,12 @@ h2 {
     line-height: 1.8;
     max-width: 32ch;
     margin-bottom: 1rem;
-    color: var(--dark-blue-paragraph);
   }
 }
 
 p:not([class]) {
   line-height: 1.8;
   max-width: 32ch;
-  color: var(--dark-blue-paragraph);
 }
 
 p[data-width='wide'] {
@@ -314,7 +322,6 @@ p[data-width='wide'] {
 
   .intro {
     max-width: 32ch;
-    color: var(--dark-blue-paragraph);
   }
 
   .pb-200 {
@@ -336,13 +343,15 @@ p[data-width='wide'] {
 
 /* General Styles */
 
-body,html{
+body,
+html {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
+
 body {
   font-family: var(--ff-body);
   font-size: var(--fs-body);
@@ -470,7 +479,7 @@ body {
   position: relative;
 }
 
-.graph-section::after{
+.graph-section::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -483,10 +492,11 @@ body {
   right: -35%;
   z-index: -1;
 }
+
 @media screen and (max-width:30em) {
-  .graph-section::after{
+  .graph-section::after {
     top: -50%;
-  right: -35%;
+    right: -35%;
   }
 }
 
@@ -544,6 +554,7 @@ body {
   color: var(--pale-red);
   background-color: var(--primary-bright-red);
 }
+
 @media screen and (max-width:50em) {
   .numbered-list li::before {
     width: 6rem;
@@ -563,6 +574,7 @@ body {
   text-align: center;
   padding-bottom: var(--size-600);
 }
+
 .carousel {
   display: flex !;
   /* padding: var(--size-300); */
@@ -680,21 +692,49 @@ button[aria-selected='true'] {
   color: var(--primary-bright-red);
 }
 
-/* 5.3 footer form section */
-
-input[type='email'],
-input[type='email']:focus {
-  width: 60%;
-  border-radius: 100vmax;
-  border: none;
-  outline: none;
-  padding-block: var(--size-300);
-  padding-left: 1em;
-  font-size: var(--fs-300);
-}
-
 .footer-nav-columns {
   columns: 2;
   -webkit-columns: 2;
   -moz-columns: 2;
+}
+
+/* 5.3 footer form section */
+
+.wide-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+input[type='email'],
+input[type='email']:focus {
+  position: relative;
+  border-radius: 100vmax;
+  border: none;
+  outline: none;
+  padding-block: var(--size-200);
+  padding-left: 1.5em;
+  font-size: var(--fs-300);
+}
+
+.form-button {
+  margin-left: var(--size-300);
+  padding: var(--size-450) var(--size-500);
+}
+
+input[type='email']:invalid {
+  color: hsl(0, 61%, 60%);
+}
+
+form {
+  position: relative;
+  /* overflow: hidden; */
+}
+
+form::before {
+  content: 'Please insert a valid email';
+  position: absolute;
+  font-size: var(--fs-300);
+  color: hsl(0, 61%, 60%);
+  top: 102%;
+  left: 1rem;
 }
