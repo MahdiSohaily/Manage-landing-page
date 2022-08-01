@@ -82,9 +82,9 @@
 /* Remove list styles on ul,
  ol elements with a list role, which suggests
   default styling will be removed */
-ul[role='list'],ul,
+ul[role='list'],ul
 ol[role='list'] {
-  list-style: none !important;
+  list-style: none;
 }
 
 /* Set core root defaults */
