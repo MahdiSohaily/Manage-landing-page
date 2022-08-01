@@ -261,9 +261,10 @@ h2 {
 }
 
 @media screen and (max-width:58rem) {
-  .footer-nav{
+  .footer-nav {
     padding-block: var(--size-700);
   }
+
   .social-media-icon {
     margin-top: var(--size-700);
   }
@@ -311,7 +312,7 @@ h2 {
   }
 }
 
-p{
+p {
   line-height: 2;
 }
 
@@ -321,7 +322,8 @@ p:not([class]) {
 }
 
 p[data-width='wide'] {
-  max-width: 42ch;
+  padding-left: var(--size-900);
+  max-width: 50ch;
 }
 
 @media screen and (max-width:30em) {
@@ -372,6 +374,12 @@ p[data-width='wide'] {
   max-width: 15ch;
 }
 
+@media screen and (min-width:50rem) {
+  .max-ch {
+    max-width: 20ch;
+  }
+}
+
 
 /* General Styles */
 
@@ -414,7 +422,8 @@ body {
   .button[data-type='inverted'] {
     margin-top: var(--size-600);
   }
-  .heading-paragraph{
+
+  .heading-paragraph {
     font-size: var(--fs-800);
     line-height: 1.5;
     max-width: 12ch !important;
@@ -574,41 +583,54 @@ body {
   }
 }
 
+.aligned-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
 .numbered-list {
-  list-style-type: decimal-leading-zero !important;
   counter-reset: section;
 }
 
-.numbered-list li {
+.numbered-item {
   display: flex;
   align-items: baseline;
 }
 
-.numbered-list li::before {
-  counter-increment: section;
-  content: "0" counter(section);
-  width: 4rem;
-  height: 2.3rem;
-  border-radius: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: var(--size-500);
+.tag {
   color: var(--pale-red);
   background-color: var(--primary-bright-red);
+  margin-right: var(--size-400);
+  padding: var(--size-200) var(--size-500);
+  border-radius: 100vw;
+}
+
+.tag::before {
+  counter-increment: section;
+  content: "0" counter(section);
+}
+
+h3 {
+  margin: 0 !important;
 }
 
 @media screen and (max-width:50em) {
-  .numbered-list li::before {
-    width: 6rem;
+  p[data-width='wide'] {
+    padding-left: 0;
+    max-width: 37ch;
+    margin-top: var(--size-700);
   }
 
-  /* .aligned-list{
-    background-color: var(--dark-blue);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  } */
+  .numbered-item {
+    background-color: var(--pale-red);
+    border-top-left-radius: 100vw;
+    border-bottom-left-radius: 100vw;
+    position: absolute;
+    top: 0;
+    right: -2rem;
+    left: 0;
+  }
 }
 
 /* 3. carousel section styles */
@@ -733,10 +755,12 @@ p.fs-secondary-heading {
     flex-direction: column;
     align-items: center;
   }
-  .logo{
+
+  .logo {
     margin-top: var(--size-700);
     order: 2;
   }
+
   .social-media-icon {
     margin-top: 0;
     padding-inline: var(--size-500);
@@ -835,12 +859,13 @@ form::before {
   left: 1rem;
 }
 
-.copy-right{
+.copy-right {
   margin-right: var(--size-900);
   text-align: right;
 }
+
 @media screen and (max-width:30em) {
-  .copy-right{
+  .copy-right {
     text-align: center;
     margin: var(--size-700) 0 0 0;
   }
