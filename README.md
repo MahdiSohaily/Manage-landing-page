@@ -30,8 +30,8 @@ Users should be able to:
 ![](./design/screen-shot.png)
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/MahdiSohaily/Manage-landing-page)
-- Live Site URL: [Add live site URL here](https://mahdisohaily.github.io/Manage-landing-page)
+- Solution URL: [https://github.com/MahdiSohaily/Manage-landing-page]()
+- Live Site URL: [https://mahdisohaily.github.io/Manage-landing-page]()
 
 ## My process
 
