@@ -46,6 +46,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@MahdiSohaily](https://www.frontendmentor.io/profile/MahdiSohaily)
-- Twitter - [@Mahdi_Rezaei_AF](https://www.twitter.com/Mahdi_Rezaei_AF)
+- Website - [https://www.your-site.com]
+- Frontend Mentor - [https://www.frontendmentor.io/profile/MahdiSohaily]
+- Twitter - [https://www.twitter.com/Mahdi_Rezaei_AF]
