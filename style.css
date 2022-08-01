@@ -223,7 +223,7 @@ smooth scroll for people that prefer not to see them */
   padding-block: var(--size-400);
 }
 
-p{
+p {
   color: var(--dark-blue-paragraph);
 }
 
@@ -245,11 +245,33 @@ h2 {
   gap: 1rem;
 } */
 
-.even-column {
+.even-column,
+.flex-footer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media screen and (min-width:58rem) {
+  .flex-footer {
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width:58rem) {
+  .footer-nav{
+    padding-block: var(--size-700);
+  }
+  .social-media-icon {
+    margin-top: var(--size-700);
+  }
+}
+
+@media screen and (max-width:30rem) {
+  .flex-footer {
+    flex-direction: column-reverse;
+  }
 }
 
 .reverse {
@@ -340,6 +362,10 @@ p[data-width='wide'] {
   align-items: center;
 }
 
+.max-ch {
+  max-width: 22ch;
+}
+
 
 /* General Styles */
 
@@ -364,7 +390,7 @@ body {
   text-decoration: none;
   border: none;
   border-radius: 100vmax;
-  padding: var(--size-450) var(--size-600);
+  padding: var(--size-400) var(--size-600);
   font-size: var(--fs-button);
   font-weight: var(--fw-bold);
   line-height: 1;
@@ -672,11 +698,47 @@ button[aria-selected='true'] {
 
 
 /* 5. FOOTER STYLES */
+
+p.fs-secondary-heading {
+  max-width: 20ch;
+}
+
 /* 5.1 social media icons list */
 .social-media-icon {
+  width: 100%;
   display: flex;
   gap: var(--size-300);
 }
+
+@media screen and (max-width:30rem) {
+  .centered-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo{
+    margin-top: var(--size-700);
+    order: 2;
+  }
+  .social-media-icon {
+    margin-top: 0;
+    padding-inline: var(--size-500);
+    order: 1;
+    justify-content: space-around;
+  }
+
+  .footer-nav {
+    width: 70%;
+    margin: auto;
+  }
+}
+
+
+/* @media screen and (max-width: 30rem) {
+  .social-media-icon{
+    align-items: center;
+  }
+} */
 
 .social-media-icon li:hover a img {
   background-color: red;
@@ -702,8 +764,20 @@ button[aria-selected='true'] {
 
 .wide-form {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
 }
+
+@media screen and (max-width:30em) {
+  #email {
+    flex-grow: 8;
+  }
+
+  .form-button {
+    flex-grow: 2;
+  }
+}
+
 
 input[type='email'],
 input[type='email']:focus {
@@ -712,13 +786,14 @@ input[type='email']:focus {
   border: none;
   outline: none;
   padding-block: var(--size-200);
+  padding-inline: var(--size-600);
   padding-left: 1.5em;
   font-size: var(--fs-300);
 }
 
 .form-button {
   margin-left: var(--size-300);
-  padding: var(--size-450) var(--size-500);
+  padding: var(--size-300) var(--size-450);
 }
 
 input[type='email']:invalid {
@@ -727,7 +802,11 @@ input[type='email']:invalid {
 
 form {
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
+}
+
+.error {
+  display: none;
 }
 
 form::before {
@@ -737,4 +816,15 @@ form::before {
   color: hsl(0, 61%, 60%);
   top: 102%;
   left: 1rem;
+}
+
+.copy-right{
+  margin-right: var(--size-900);
+  text-align: right;
+}
+@media screen and (max-width:30em) {
+  .copy-right{
+    text-align: center;
+    margin: var(--size-700) 0 0 0;
+  }
 }
