@@ -52,6 +52,7 @@
   --size-800: 4rem;
   --size-900: 5rem;
   --size-lg: 7rem;
+  --size-xlg: 10rem;
 }
 
 /* changing fonts on different screen sizes */
@@ -82,7 +83,8 @@
 /* Remove list styles on ul,
  ol elements with a list role, which suggests
   default styling will be removed */
-ul, li {
+ul,
+li {
   list-style-type: none !important;
 }
 
@@ -445,6 +447,7 @@ body {
 }
 
 .nav-wrapper {
+  padding-top: var(--size-100);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -466,6 +469,7 @@ body {
   font-size: var(--fs-nav);
   color: var(--dark-blue);
   font-weight: var(--fw-semi-bold);
+  opacity: 0.7;
 }
 
 .nav-list li a:hover {
@@ -735,6 +739,24 @@ button[aria-selected='true'] {
 
 
 /* 5. FOOTER STYLES */
+.icon-logo {
+  height: 24px;
+  margin: 0;
+  max-width: var(--size-xlg);
+}
+
+.social-media-icon {
+  margin-left: var(--size-200);
+}
+.icon {
+  width: 21px;
+  height: 20px ;
+  fill: white;
+}
+
+.icon:is(:hover, :focus){
+  fill: var(--primary-bright-red) ;
+}
 
 p.fs-secondary-heading {
   max-width: 20ch;
