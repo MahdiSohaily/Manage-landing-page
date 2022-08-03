@@ -882,6 +882,7 @@ form::before {
 .copy-right {
   margin-right: var(--size-900);
   text-align: right;
+  font-size: var(--fs-300);
 }
 
 @media screen and (max-width:30em) {
