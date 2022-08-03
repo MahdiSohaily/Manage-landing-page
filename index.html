@@ -27,8 +27,8 @@
           <img class="icon-close" src="./images/icon-close.svg" alt="menu close icon" aria-hidden="true">
           <span class="visually-hidden">menu</span>
         </button>
-        <nav class="primary-navigation" id="primary-navigation-1">
-          <ul class="nav-list">
+        <nav aria-label="primary-menu" class="primary-navigation" id="primary-navigation-1">
+          <ul id="primary-menu" class="nav-list">
             <li><a href="#">Pricing</a></li>
             <li><a href="#">Product</a></li>
             <li><a href="#">About Us</a></li>
@@ -191,12 +191,12 @@
       <div class="container">
         <div class="flex-footer">
           <div class="column-sm centered-item">
-            <a class="logo" href="#">
+            <a class="logo" href="#" aria-label="company logo">
               <svg class="icon-logo">
                 <use xlink:href="./images/logo-white.svg#logo"></use>
               </svg>
             </a>
-            <ul class="social-media-icon " aria-label="social-media-list">
+            <ul class="social-media-icon ">
               <li><a aria-label="facebook" href="#">
                 <svg class="icon">
                   <use xlink:href="./images/social-icons.svg#icon-facebook"></use>
@@ -225,8 +225,8 @@
             </ul>
           </div>
           <div class="column-sm">
-            <nav class="footer-nav">
-              <ul class="flow footer-nav-columns" data-columns="2" style="--flow-spacer: 1em">
+            <nav aria-label="footer-nav" class="footer-nav">
+              <ul id="footer-nav" class="flow footer-nav-columns" data-columns="2" style="--flow-spacer: 1em">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Pricing</a></li>
                 <li><a href="#">Products</a></li>
